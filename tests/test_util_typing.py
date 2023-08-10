@@ -211,13 +211,13 @@ def test_restify_pep_585():
 
     # Mix old typing with PEP 585
     assert restify(List[dict[str, Tuple[str, ...]]]) == (":py:class:`~typing.List`\\ "
-                                               "[:py:class:`dict`\\ "
-                                               "[:py:class:`str`, :py:class:`~typing.Tuple`\\ "
-                                               "[:py:class:`str`, ...]]]")
+                                                         "[:py:class:`dict`\\ "
+                                                         "[:py:class:`str`, :py:class:`~typing.Tuple`\\ "
+                                                         "[:py:class:`str`, ...]]]")
     assert restify(tuple[MyList[list[int]], int]) == (":py:class:`tuple`\\ ["
-                                                ":py:class:`tests.test_util_typing.MyList`\\ "
-                                                "[:py:class:`list`\\ [:py:class:`int`]], "
-                                                ":py:class:`int`]")
+                                                      ":py:class:`tests.test_util_typing.MyList`\\ "
+                                                      "[:py:class:`list`\\ [:py:class:`int`]], "
+                                                      ":py:class:`int`]")
 
 
 @pytest.mark.skipif(sys.version_info[:2] <= (3, 9), reason='python 3.10+ is required.')
