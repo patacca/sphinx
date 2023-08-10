@@ -282,7 +282,8 @@ def stringify_annotation(
             #     return repr(annotation)
 
             annotation_args = ", ".join(stringify_annotation(arg, mode=mode) for arg in args)
-            return f'{annotation_qualname}[]'
+            # return f'{annotation_qualname}[]'
+            return 'asd'
         else:
             return annotation_qualname
     elif annotation is Ellipsis:
